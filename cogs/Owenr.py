@@ -7,8 +7,7 @@ class OwnerCog(commands.Cog):
 
     @commands.command(name='load', hidden=True)
     async def cog_load(self, ctx, *, cog: str):
-        """Command which Loads a Module.
-        Remember to use dot path. e.g: cogs.owner"""
+
 
         try:
             self.bot.load_extension(cog)
@@ -19,8 +18,7 @@ class OwnerCog(commands.Cog):
 
     @commands.command(name='unload', hidden=True)
     async def cog_unload(self, ctx, *, cog: str):
-        """Command which Unloads a Module.
-        Remember to use dot path. e.g: cogs.owner"""
+
 
         try:
             self.bot.unload_extension(cog)
