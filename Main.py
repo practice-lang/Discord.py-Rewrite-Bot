@@ -12,7 +12,7 @@ client = commands.Bot(command_prefix='>')
 async def on_ready():
     print(f'Logged in as: {client.user.name} - {client.user.id} Version: {discord.__version__}\n')
     print( [f"{guild} {len(guild.members)}" for guild in app.guilds])
-
+    await client.change_presence(game=discord.Game(name="hi!"))
 
 @client.command()
 async def ping(ctx):
@@ -41,7 +41,6 @@ for cog in os.listdir(".\\cogs"):
         except Exception as e:
             print(f"{cog} can not be loaded:")
             raise e
-
 
 
 client.run('토큰')
