@@ -10,9 +10,10 @@ client = commands.Bot(command_prefix='>')
 
 @client.event
 async def on_ready():
+    game = discord.Game("with the API")
+    await client.change_presence(status=discord.Status.online, activity=game)
     print(f'Logged in as: {client.user.name} - {client.user.id} Version: {discord.__version__}\n')
     print( [f"{guild} {len(guild.members)}" for guild in app.guilds])
-    await client.change_presence(game=discord.Game(name="hi!"))
 
 @client.command()
 async def ping(ctx):
